@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Single AJAX</title>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/address?postalcode=37212&page=1&pagesize=25",
+	"method": "GET",
+	"headers": {
+		"apikey" : "0da31fe50c76d41e8f480520b54d9a17",
+		"accept": "application/json"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+// ---------------------------------------------------------
+  </script>
+</body>
+</html>
