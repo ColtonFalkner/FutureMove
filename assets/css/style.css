@@ -1,0 +1,179 @@
+body {
+    font-family: 'Merriweather';
+   /* float: right */
+    /* font-weight: */
+  }
+  
+  #title {
+    background-color:gray;
+    color: white;
+    height: 1000px;
+    text-align: center;
+    /* float: right; */
+  }
+  
+  #page-header {
+    background-image: linear-gradient(to bottom right,	gray);
+    padding-right: 5%;
+    padding-left: 5%;
+    text-align: center;
+  }
+  
+  .container-fluid {
+    padding: 3% 15%;
+  }
+  
+  h1 {
+    font-family: 'Merriweather';
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1.5;
+    
+  }
+  
+  h3 {
+    font-family: 'Merriweather';
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-weight: 700;
+    font-size: 3rem;
+    font-family: 'Merriweather';
+    line-height: 1.5;
+  }
+  
+  p {
+    color: #8f8f8f;
+  }
+  #title{
+    background-image: linear-gradient(to bottom right,	  gray);
+    height:30%;
+  }
+  
+  /* navigation bar */
+  .navbar {
+    padding: 0 0 4.5rem;
+  }
+  #jtron{
+    background-image: radial-gradient(to top left,gray);
+   
+    
+  }
+  #abt{color: white;
+  margin: 5%}
+  
+  .navbar-brand {
+    font-family: 'Ubuntu';
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-item {
+    padding: 0 18px;
+  }
+  
+  .nav-link {
+    font-size: 1.2rem;
+    font-family: 'Merriweather';
+      font-weight: lighter;
+  }
+  #nava{
+    color: black;
+  }
+  #page-header {
+    background-image: linear-gradient(to bottom right,   gray);
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+  #h1card{
+    margin-left: 13%;
+   
+  }
+  .card-header {
+    background-color: gray;
+    color: white;
+  }
+  /* Download buttons */
+  .download-button {
+    margin: 5% 3% 5% 0;
+  }
+  
+  /* title image */
+  .title-image {
+    width: 60%;
+    
+  }
+  
+  /* features section */
+  #features {
+    padding: 7% 15%;
+  }
+  #startbtn:hover{
+    background-color: white;
+    color: black;
+  }
+  #bcktt:hover{   background-color: white;
+    color: black;}
+  
+  .feature-box {
+    text-align: center;
+    padding: 5%;
+  }
+  
+  .icon {
+    color: gray;
+    margin-bottom: 1rem;
+  }
+  
+  .icon:hover {
+    color: gray;
+  }
+  /* buttons  */
+  .btnbook{
+  background-image: linear-gradient(to top left,gray);
+  height: 30px;
+  width: 75%;
+  text-align: center;
+  /* margin: 5%; */
+  margin-left: 12%;
+  margin-bottom: 2%;
+  border-style:solid;
+  border: gray
+  
+  }
+  .card{
+  margin-top: 5%
+  }
+  #inputError{
+  color: white;
+  }
+  
+  
+  
+  
+  @media only screen and (max-width: 640px) {
+    body {
+      background-color:black;
+    }
+    #masthead {
+      position: static;
+    }
+  
+    
+  }
+  @media only screen and (max-width: 768px) {
+    body {
+      background-color:black;
+    }
+  
+    
+  }
+  @media only screen and (max-width: 980px) {
+    body {
+      background-color:black;
+    }
+  
+    
+  }
+  
