@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Single AJAX</title>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/address?postalcode=37212&page=1&pagesize=25",
+	"method": "GET",
+	"headers": {
+		"apikey" : "0da31fe50c76d41e8f480520b54d9a17",
+		"accept": "application/json"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+// This is relevant information from Attom for Nashville TN
+// State ID info:  <item type="ST" id="ST47" name="Tennessee" abbreviation="TN" geo_key="ST47" geo_center_latitude="35.8585560000" geo_center_longitude="-86.3493580000" area="42143.9"/>
+// State ID URL: https://api.gateway.attomdata.com/areaapi/v2.0.0/state/lookup
+// Breakdown of area information for Nashville (Area Hierarchy:  <item type="CB" id="CB34980" name="Nashville-Davidson--Murfreesboro--Franklin, TN" geo_key="CB34980" area="6378.13" area_unit="sq. mi." />
+// Nashville County information: <item type="CB" id="CB34980" name="Nashville-Davidson--Murfreesboro--Franklin, TN" geo_key="CB34980" geo_center_latitude="36.0885070000" geo_center_longitude="-86.7266020000" />
+// Area County Lookup: <item type="CO" id="CO47037" name="Davidson" geo_key="CO47037" geo_center_latitude="36.1691290000" geo_center_longitude="-86.7847900000" />
+// POI Business Categories:     <package name="Lookup" resource="Business Category" service="Poi Search" version="2.0" descr="To be documented..." notice="">
+    //   <item type="BUSINESS CATEGORY" id="1" name="ATTRACTIONS - RECREATION" />
+    //   <item type="BUSINESS CATEGORY" id="2" name="AUTOMOTIVE SERVICES" />
+    //   <item type="BUSINESS CATEGORY" id="3" name="BANKS - FINANCIAL" />
+    //   <item type="BUSINESS CATEGORY" id="4" name="EATING - DRINKING" />
+    //   <item type="BUSINESS CATEGORY" id="5" name="EDUCATION" />
+    //   <item type="BUSINESS CATEGORY" id="6" name="FARM - RANCH" />
+    //   <item type="BUSINESS CATEGORY" id="7" name="GOVERNMENT - PUBLIC" />
+    //   <item type="BUSINESS CATEGORY" id="8" name="HEALTH CARE SERVICES" />
+    //   <item type="BUSINESS CATEGORY" id="9" name="HOSPITALITY" />
+    //   <item type="BUSINESS CATEGORY" id="10" name="ORGANIZATIONS - ASSOCIATIONS" />
+    //   <item type="BUSINESS CATEGORY" id="11" name="PERSONAL SERVICES" />
+    //   <item type="BUSINESS CATEGORY" id="12" name="PET SERVICES" />
+    //   <item type="BUSINESS CATEGORY" id="13" name="SHOPPING" />
+	//   <item type="BUSINESS CATEGORY" id="14" name="TRAVEL" />
+// POI Line of business: <package name="Lookup" resource="Lob" service="Poi Search" version="2.0" descr="To be documented..." notice="">
+    //   <item type="LOB" id="1" name="ACCESSORIES" />
+    //   <item type="LOB" id="2" name="AIR TRAVEL" />
+    //   <item type="LOB" id="3" name="AMUSEMENT PLACES" />
+    //   <item type="LOB" id="4" name="APPAREL" />
+    //   <item type="LOB" id="5" name="APPLIANCES AND ELECTRONICS" />
+    //   <item type="LOB" id="6" name="ART AND MUSEUMS" />
+    //   <item type="LOB" id="7" name="ARTS AND CRAFTS" />
+    //   <item type="LOB" id="8" name="ATM LOCATIONS" />
+    //   <item type="LOB" id="9" name="AUTOMOTIVE SERVICES" />
+    //   <item type="LOB" id="10" name="BAKERIES AND DESSERTS" />
+    //   <item type="LOB" id="11" name="BANKS" />
+    //   <item type="LOB" id="12" name="BARS - CLUBS" />
+    //   <item type="LOB" id="13" name="BATHROOM FIXTURES AND ACCESSORIES" />
+    //   <item type="LOB" id="14" name="BEDDING" />
+    //   <item type="LOB" id="15" name="BEVERAGES" />
+    //   <item type="LOB" id="16" name="BOATING" />
+    //   <item type="LOB" id="17" name="CAMPS AND CAMPGROUNDS" />
+    //   <item type="LOB" id="18" name="CAR WASHING" />
+    //   <item type="LOB" id="19" name="CATHOLIC SCHOOL" />
+    //   <item type="LOB" id="20" name="CHILD CARE" />
+    //   <item type="LOB" id="21" name="CHIROPRACTORS" />
+    //   <item type="LOB" id="22" name="CLOTHING AND ACCESSORIES" />
+    //   <item type="LOB" id="23" name="COLLECTIBLES" />
+    //   <item type="LOB" id="24" name="COLLEGES / UNIVERSITIES / GRADUATE SCHOOLS" />
+    //   <item type="LOB" id="25" name="COMMUNITY ORGANIZATIONS" />
+    //   <item type="LOB" id="26" name="CREDIT UNIONS" />
+    //   <item type="LOB" id="27" name="DANCE AND THEATER" />
+    //   <item type="LOB" id="28" name="DEPARTMENT STORES" />
+    //   <item type="LOB" id="29" name="DRAPERY AND CURTAIN FIXTURES" />
+    //   <item type="LOB" id="30" name="EMERGENCY SERVICES" />
+    //   <item type="LOB" id="31" name="EYECARE" />
+    //   <item type="LOB" id="32" name="EYEWEAR AND EYECARE" />
+    //   <item type="LOB" id="33" name="FARMS" />
+    //   <item type="LOB" id="34" name="FINANCIAL SERVICES" />
+    //   <item type="LOB" id="35" name="FLOOR AND CARPET" />
+    //   <item type="LOB" id="36" name="FOOD SERVICES" />
+    //   <item type="LOB" id="37" name="FURNITURE STORES" />
+    //   <item type="LOB" id="38" name="GOLF" />
+    //   <item type="LOB" id="39" name="GOVERNMENT OFFICES" />
+    //   <item type="LOB" id="40" name="GROCERY STORES AND MARKETS" />
+    //   <item type="LOB" id="41" name="HEALTH CLUBS AND SPAS" />
+    //   <item type="LOB" id="42" name="HOME AND GARDEN" />
+    //   <item type="LOB" id="43" name="HOSPITALS" />
+    //   <item type="LOB" id="44" name="HOUSEWARES AND FURNISHINGS" />
+    //   <item type="LOB" id="45" name="HUNTING AND FISHING" />
+    //   <item type="LOB" id="46" name="JEWELRY" />
+    //   <item type="LOB" id="47" name="JUNIOR COLLEGS" />
+    //   <item type="LOB" id="48" name="LAUNDRIES - CLEANERS" />
+    //   <item type="LOB" id="49" name="LIBRARIES" />
+    //   <item type="LOB" id="50" name="LIGHTING" />
+    //   <item type="LOB" id="51" name="LIVE MUSIC" />
+    //   <item type="LOB" id="52" name="LODGING" />
+    //   <item type="LOB" id="53" name="MARTIAL ARTS INSTRUCTION" />
+    //   <item type="LOB" id="54" name="MISC ASSOCIATIONS" />
+    //   <item type="LOB" id="55" name="MISC ATTRACTIONS" />
+    //   <item type="LOB" id="56" name="MISC EATERIES" />
+    //   <item type="LOB" id="57" name="MISC FINANCIAL" />
+    //   <item type="LOB" id="58" name="MISC SERVICES" />
+    //   <item type="LOB" id="59" name="MISC SHOPPING" />
+    //   <item type="LOB" id="60" name="MOVIE AND GAME RENTALS" />
+    //   <item type="LOB" id="61" name="MOVIE THEATERS" />
+    //   <item type="LOB" id="62" name="MUSICAL INSTRUMENTS" />
+    //   <item type="LOB" id="63" name="NON-PROFIT ORGANIZATIONS" />
+    //   <item type="LOB" id="64" name="ORCHARDS" />
+    //   <item type="LOB" id="65" name="OUTDOOR ACTIVITIES" />
+    //   <item type="LOB" id="66" name="OUTDOOR FURNITURE" />
+    //   <item type="LOB" id="67" name="PET SERVICES" />
+    //   <item type="LOB" id="68" name="PET SHOPS" />
+    //   <item type="LOB" id="69" name="PHARMACIES" />
+    //   <item type="LOB" id="70" name="PHOTOGRAPHY" />
+    //   <item type="LOB" id="71" name="PHYSICIANS AND SURGEONS" />
+    //   <item type="LOB" id="72" name="PLACE OF WORSHIP" />
+    //   <item type="LOB" id="73" name="PRIVATE SCHOOL" />
+    //   <item type="LOB" id="74" name="PUBLIC SCHOOL" />
+    //   <item type="LOB" id="75" name="RESTAURANTS" />
+    //   <item type="LOB" id="76" name="RETAIL SHOPS AND MARKETS" />
+    //   <item type="LOB" id="77" name="SHOES - FOOTWEAR" />
+    //   <item type="LOB" id="78" name="SHOPPING CENTERS AND MALLS" />
+    //   <item type="LOB" id="79" name="SPAS - BEAUTY" />
+    //   <item type="LOB" id="80" name="SPORTING GOODS" />
+    //   <item type="LOB" id="81" name="SPORTS AND RECREATION" />
+    //   <item type="LOB" id="82" name="SPORTS CLUBS" />
+    //   <item type="LOB" id="83" name="TAXI AND LIMO SERVICE" />
+    //   <item type="LOB" id="84" name="TOURIST ATTRACTIONS" />
+    //   <item type="LOB" id="85" name="TOURIST INFORMATION" />
+    //   <item type="LOB" id="86" name="TRANSPORTATION" />
+    //   <item type="LOB" id="87" name="TRAVEL SERVICES" />
+    //   <item type="LOB" id="88" name="UTILITIES AND SERVICES" />
+    //   <item type="LOB" id="89" name="VETERINARIANS" />
+    //   <item type="LOB" id="90" name="VOCATIONAL" />
+    //   <item type="LOB" id="91" name="WATER ACTIVITIES" />
+    //   <item type="LOB" id="92" name="WEDDINGS" />
+    //   <item type="LOB" id="93" name="ZOOS GARDENS AQUARIUMS" />
+
+  </script>
+</body>
+</html>
