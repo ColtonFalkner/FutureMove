@@ -10,7 +10,7 @@
   var settings1 = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/address?postalcode=37212&page=1&pagesize=25",
+	"url": "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?postalcode=37212&minUniversalSize=1200&maxUniversalSize=1800",
 	"method": "GET",
 	"headers": {
 		"apikey" : "0da31fe50c76d41e8f480520b54d9a17",
@@ -20,7 +20,7 @@
 var settings2 = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://api.gateway.attomdata.com/poisearch/v2.0.0/poi/geography?PostalCodeKey=37212&SearchDistance=5&RecordLimit=20",
+	"url": "https://api.gateway.attomdata.com/poisearch/v2.0.0/poi/geography?PostalCodeKey=37212&SearchDistance=5&RecordLimit=20&Sort=BUSINESSCATEGORY",
 	"method": "GET",
 	"headers": {
 		"apikey" : "0da31fe50c76d41e8f480520b54d9a17",
