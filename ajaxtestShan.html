@@ -7,7 +7,7 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-  var settings = {
+  var settings_1 = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/address?postalcode=37212&page=1&pagesize=25",
@@ -17,8 +17,52 @@
 		"accept": "application/json"
 	}
 }
+var settings_2 = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.gateway.attomdata.com/communityapi/v2.0.0/Area/Full/?AreaId=CO47037",
+    "method": "GET",
+    "headers": {
+        "apikey" : "0da31fe50c76d41e8f480520b54d9a17",
+        "accept": "application/json"
+    }
+}
 
-$.ajax(settings).done(function (response) {
+var settings_3 = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.gateway.attomdata.com/communityapi/v2.0.0/Area/Full/?AreaId=CO47037",
+    "method": "GET",
+    "headers": {
+        "apikey" : "0da31fe50c76d41e8f480520b54d9a17",
+        "accept": "application/json"
+    }
+}
+
+var crime = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.gateway.attomdata.com/communityapi/v2.0.0/Area/Full/?AreaId=CO47037",
+    "method": "GET",
+    "headers": {
+        "apikey" : "0da31fe50c76d41e8f480520b54d9a17",
+        "accept": "application/json"
+    }
+}
+
+$.ajax(settings_1).done(function (response) {
+	console.log(response);
+});
+
+$.ajax(settings_2).done(function (response) {
+	console.log(response);
+});
+
+$.ajax(settings_3).done(function (response) {
+	console.log(response);
+});
+
+$.ajax(crime).done(function (response) {
 	console.log(response);
 });
 // This is relevant information from Attom for Nashville TN
