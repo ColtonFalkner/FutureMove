@@ -1,6 +1,7 @@
 
 
-
+    var result = result
+    var result
     var crime = {
         "async": true,
         "crossDomain": true,
@@ -15,7 +16,7 @@
         console.log(response);
     })
        .then(function(response) {
-           console.log(crime);
-           console.log(response);
-           $("#eventResults").html("<h3>" + response.crmcytotc + "</h3>");
+           console.log(response.result.package.item[i].id);
+        //    console.log(response);
+           $("#eventResults").html("<h3>" + result.package.item[i].crmcytotc + "</h3>");
         });
