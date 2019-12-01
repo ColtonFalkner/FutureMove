@@ -28,12 +28,20 @@ var settings2 = {
 	}
 }
 
-$.ajax(settings1).done(function (response) {
+
+
+$.ajax(settings1).then(function (response) {
 	console.log(response);
+	
 });
+
+
+
 $.ajax(settings2).done(function (response) {
 	console.log(response);
 });
+
+
 // ---------------------------------------------------------
   </script>
 </body>
