@@ -5,6 +5,16 @@
   <title>Single AJAX</title>
 </head>
 <body>
+
+		<div class ="card" style = "width: 100%">
+				<h5 class = "card-header"><i>Listings:</i></h5>
+				<div class= "card-body">
+				  <div id = "listResults">
+					<div class= "card-group">
+					</div>
+				  </div>
+				</div>
+			 </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
   var propertySnapshot = {
@@ -31,34 +41,42 @@ var settings2 = {
 
 
 $.ajax(propertySnapshot).then(function (response) {
-	console.log(response.property[0].address.oneLine);
-	console.log(response.property[0].building.rooms);
-	console.log(response.property[0].summary.propclass);
+      for (var i = 0; i < response.property.length; i++) {
+      console.log(response.property[i].address.oneLine);
+      console.log(response.property[i].building.rooms);
+	  console.log(response.property[i].summary.propclass);
+	  
+	  var listCard = $('<div>').addClass('card');
+      var listAddress =$('<h5>').addClass('card-title');
+      listAddress.append(response.property[i].address.oneLine);
 
-	console.log(response.property[1].address.oneLine);
-	console.log(response.property[1].building.rooms);
-	console.log(response.property[1].summary.propclass);
+      $('#listResults').append(listAddress);
+    
+      // console.log(response.property[1].address.oneLine);
+      // console.log(response.property[1].building.rooms);
+      // console.log(response.property[1].summary.propclass);
+    
+      // console.log(response.property[2].address.oneLine);
+      // console.log(response.property[2].building.rooms);
+      // console.log(response.property[2].summary.propclass);
+    
+      // console.log(response.property[3].address.oneLine);
+      // console.log(response.property[3].building.rooms);
+      // console.log(response.property[3].summary.propclass);
+    
+      // console.log(response.property[4].address.oneLine);
+      // console.log(response.property[4].building.rooms);
+      // console.log(response.property[4].summary.propclass);
+      
+    }});
 
-	console.log(response.property[2].address.oneLine);
-	console.log(response.property[2].building.rooms);
-	console.log(response.property[2].summary.propclass);
-
-	console.log(response.property[3].address.oneLine);
-	console.log(response.property[3].building.rooms);
-	console.log(response.property[3].summary.propclass);
-
-	console.log(response.property[4].address.oneLine);
-	console.log(response.property[4].building.rooms);
-	console.log(response.property[4].summary.propclass);
-	
-});
 
 
 
 
-$.ajax(settings2).done(function (response) {
-	console.log(response);
-});
+// $.ajax(settings2).done(function (response) {
+// 	console.log(response);
+// });
 
 
 // ---------------------------------------------------------

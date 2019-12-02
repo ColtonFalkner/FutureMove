@@ -116,7 +116,8 @@ $(document).ready(function () {
         });
     };
 
-    ///
+    /////////////////////////Real Estate/////////////////////////////
+    ////////////////////////////Listings/////////////////////////////
     var propertySnapshot = {
       "async": true,
       "crossDomain": true,
@@ -127,28 +128,35 @@ $(document).ready(function () {
         "accept": "application/json"
       }
     };
-    $.ajax(propertySnapshot).then(function (response) {
-      console.log(response.property[0].address.oneLine);
-      console.log(response.property[0].building.rooms);
-      console.log(response.property[0].summary.propclass);
+    $.ajax(propertySnapshot).done(function (response) {
+      for (var i = 0; i < response.length; i++) {
+      console.log(response.property[i].address.oneLine);
+      console.log(response.property[i].building.rooms);
+      console.log(response.property[i].summary.propclass);
+
+          // var listCard = $('<div>').addClass('card');
+          // var listAddress =$('<h5>').addClass('card-title');
+          // listAddress.append(response.property[i].address.oneLine);
+
+          // $('#listResults').append(listAddress);
     
-      console.log(response.property[1].address.oneLine);
-      console.log(response.property[1].building.rooms);
-      console.log(response.property[1].summary.propclass);
+      // console.log(response.property[1].address.oneLine);
+      // console.log(response.property[1].building.rooms);
+      // console.log(response.property[1].summary.propclass);
     
-      console.log(response.property[2].address.oneLine);
-      console.log(response.property[2].building.rooms);
-      console.log(response.property[2].summary.propclass);
+      // console.log(response.property[2].address.oneLine);
+      // console.log(response.property[2].building.rooms);
+      // console.log(response.property[2].summary.propclass);
     
-      console.log(response.property[3].address.oneLine);
-      console.log(response.property[3].building.rooms);
-      console.log(response.property[3].summary.propclass);
+      // console.log(response.property[3].address.oneLine);
+      // console.log(response.property[3].building.rooms);
+      // console.log(response.property[3].summary.propclass);
     
-      console.log(response.property[4].address.oneLine);
-      console.log(response.property[4].building.rooms);
-      console.log(response.property[4].summary.propclass);
+      // console.log(response.property[4].address.oneLine);
+      // console.log(response.property[4].building.rooms);
+      // console.log(response.property[4].summary.propclass);
       
-    });
+    }});
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
