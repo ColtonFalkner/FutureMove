@@ -5,6 +5,16 @@
   <title>Single AJAX</title>
 </head>
 <body>
+
+		<div class ="card" style = "width: 100%">
+				<h5 class = "card-header"><i>Listings:</i></h5>
+				<div class= "card-body">
+				  <div id = "listResults">
+					<div class= "card-group">
+					</div>
+				  </div>
+				</div>
+			 </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
   var propertySnapshot = {
@@ -34,7 +44,13 @@ $.ajax(propertySnapshot).then(function (response) {
       for (var i = 0; i < response.property.length; i++) {
       console.log(response.property[i].address.oneLine);
       console.log(response.property[i].building.rooms);
-      console.log(response.property[i].summary.propclass);
+	  console.log(response.property[i].summary.propclass);
+	  
+	  var listCard = $('<div>').addClass('card');
+      var listAddress =$('<h5>').addClass('card-title');
+      listAddress.append(response.property[i].address.oneLine);
+
+      $('#listResults').append(listAddress);
     
       // console.log(response.property[1].address.oneLine);
       // console.log(response.property[1].building.rooms);

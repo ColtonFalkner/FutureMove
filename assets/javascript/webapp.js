@@ -128,11 +128,17 @@ $(document).ready(function () {
         "accept": "application/json"
       }
     };
-    $.ajax(propertySnapshot).then(function (response) {
+    $.ajax(propertySnapshot).done(function (response) {
       for (var i = 0; i < response.length; i++) {
       console.log(response.property[i].address.oneLine);
       console.log(response.property[i].building.rooms);
       console.log(response.property[i].summary.propclass);
+
+          // var listCard = $('<div>').addClass('card');
+          // var listAddress =$('<h5>').addClass('card-title');
+          // listAddress.append(response.property[i].address.oneLine);
+
+          // $('#listResults').append(listAddress);
     
       // console.log(response.property[1].address.oneLine);
       // console.log(response.property[1].building.rooms);
