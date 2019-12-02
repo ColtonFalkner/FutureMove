@@ -117,7 +117,7 @@ $(document).ready(function () {
     };
 ////////////////////////////////////////////////////////////////////////////////////////
 //News Option 1 
-//  function displayResultsNews() {
+ function displayResultsNews() {
 //      // News
 //      // var city= "Nashville";
 //      // var state= "TN";
@@ -128,45 +128,48 @@ $(document).ready(function () {
 //     // var queryURL = "https://newsapi.org/v2/top-headlines" +
 //     //     "q=" + location + "&units=imperial&appid=" + APIKey;
 //     //NYT URL and KEY
-//     // var APIkey = "XkW2IzM4i0EL3Gyzv9MPMSBVFdJ95geE";
-//     // var queryURL = "https://api.nytimes.com/svc/topstories/v2/science.json?api-key=yourkey"
+    var APIkey = "XkW2IzM4i0EL3Gyzv9MPMSBVFdJ95geE";
+    var queryURL = "https://api.nytimes.com/svc/topstories/v2/science.json?api-key=yourkey"+
+    "q=" + location + "&units=imperial&appid=" + APIKey;
     
-//     var queryURL = 'https://api.nytimes.com/svc/topstories/v2/science.json?api-key=XkW2IzM4i0EL3Gyzv9MPMSBVFdJ95geE' + city + '&state=' + state + '&per_page=5';
+    var queryURL = 'https://api.nytimes.com/svc/topstories/v2/science.json?api-key=XkW2IzM4i0EL3Gyzv9MPMSBVFdJ95geE' + city + '&state=' + state + '&per_page=5';
    
-//      $.ajax({
-//          url: queryURL,
-//          method: "GET"
-//      }).then(function (response) {
+     $.ajax({
+         url: queryURL,
+         method: "GET"
+     }).then(function (response) {
         
-//          console.log('-----News-----')
-//          var news = response.news;
-//          for (var i = 0; i < news.length; i++) {
-//              console.log(response.news[i].name);
-//              console.log(response.news[i].city);
-//              console.log(response.news[i].date);
+         console.log('-----News-----')
+         var news = response.news;
+         for (var i = 0; i < news.length; i++) {
+             console.log(response.news[i].name);
+             console.log(response.news[i].city);
+             console.log(response.news[i].date);
     
-//              var newsCard = $('<div>').addClass('card');
+             var newsCard = $('<div>').addClass('card');
              
-//              var pNewsName = $('<h5>').addClass('card-title');
-//                 pNewsName.append(response.news[i].name);
+             var pNewsName = $('<h5>').addClass('card-title');
+                pNewsName.append(response.news[i].name);
             
-//              var pNewsAddress = $('<h5>').addClass('card-title');
-//              pRestAddress.append(response.news[i].address + ' , ' + response.news[i].city);
-//             //  pNewsName.append(response.news[i].city);
+             var pNewsCity = $('<h5>').addClass('card-title');
+             pRestCity.append(response.news[i].city + ' , ' + response.news[i].city);
+            //  pNewsName.append(response.news[i].city);
 
-//              var pNewsDate = $('<h6>').addClass('card-text')
-//              pNewsDate.append(response.news[i].date);
+             var pNewsDate = $('<h6>').addClass('card-text')
+             pNewsDate.append(response.news[i].date);
 
-//              newsCard.append(pNewsName);
-//              newsCard.append(pNewsAddress);
-//              newsCard.append(pNewsDate);
+             newsCard.append(pNewsName);
+             newsCard.append(pNewsCity);
+             newsCard.append(pNewsDate);
 
-//              $('#newsResults').append(newsCard);
-//          }
+             $('#newsResults').append(newsCard);
+         }
 
-//      });
-//  };
-//News Option 2
+     });
+ };
+
+/////////////////////////////////////////////////////////////////////
+// //News Option 2
 //     '@returns {string}' 
 //     //URL for NYT API based on form inputs
 
