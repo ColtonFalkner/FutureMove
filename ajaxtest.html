@@ -7,7 +7,7 @@
 <body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-  var settings1 = {
+  var propertySnapshot = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?postalcode=37212&minUniversalSize=1200&maxUniversalSize=1800",
@@ -30,10 +30,29 @@ var settings2 = {
 
 
 
-$.ajax(settings1).then(function (response) {
-	console.log(response);
+$.ajax(propertySnapshot).then(function (response) {
+	console.log(response.property[0].address.oneLine);
+	console.log(response.property[0].building.rooms);
+	console.log(response.property[0].summary.propclass);
+
+	console.log(response.property[1].address.oneLine);
+	console.log(response.property[1].building.rooms);
+	console.log(response.property[1].summary.propclass);
+
+	console.log(response.property[2].address.oneLine);
+	console.log(response.property[2].building.rooms);
+	console.log(response.property[2].summary.propclass);
+
+	console.log(response.property[3].address.oneLine);
+	console.log(response.property[3].building.rooms);
+	console.log(response.property[3].summary.propclass);
+
+	console.log(response.property[4].address.oneLine);
+	console.log(response.property[4].building.rooms);
+	console.log(response.property[4].summary.propclass);
 	
 });
+
 
 
 
