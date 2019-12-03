@@ -5,12 +5,32 @@
   <title>Single AJAX</title>
 </head>
 <body>
+
+		<div class ="card" style = "width: 100%">
+				<h5 class = "card-header"><i>Listings:</i></h5>
+				<div class= "card-body">
+				  <div id = "listResults">
+					<div class= "card-group">
+					</div>
+				  </div>
+				</div>
+			 </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-  var settings = {
+  var propertySnapshot = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/address?postalcode=37212&page=1&pagesize=25",
+	"url": "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?postalcode=37212&minUniversalSize=1200&maxUniversalSize=1800",
+	"method": "GET",
+	"headers": {
+		"apikey" : "0da31fe50c76d41e8f480520b54d9a17",
+		"accept": "application/json"
+	}
+}
+var settings2 = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://api.gateway.attomdata.com/poisearch/v2.0.0/poi/geography?PostalCodeKey=37212&SearchDistance=5&RecordLimit=20&Sort=BUSINESSCATEGORY",
 	"method": "GET",
 	"headers": {
 		"apikey" : "0da31fe50c76d41e8f480520b54d9a17",
@@ -18,10 +38,61 @@
 	}
 }
 
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
+
+
+$.ajax(propertySnapshot).then(function (response) {
+      for (var i = 0; i < response.property.length; i++) {
+      console.log(response.property[i].address.oneLine);
+      console.log(response.property[i].building.rooms);
+	  console.log(response.property[i].summary.propclass);
+	  console.log(response.property[i].location.latitude);
+	  console.log(response.property[i].location.longitude);
+	  
+	  var listCard = $('<div>').addClass('card');
+      var listAddress =$('<h5>').addClass('card-title');
+	  listAddress.append(response.property[i].address.oneLine);
+	  
+	  var listRooms = $('<h6>').addClass('card-text');
+		listRooms.append(response.property[i].building.rooms);
+
+		var listClass = $('<h6>').addClass('card-text');
+			listClass.append(response.property[i].summary.propclass);
+
+		listCard.append(listAddress);
+		listCard.append(listRooms);
+		listCard.append(listClass);
+
+      $('#listResults').append(listCard);
+    
+      // console.log(response.property[1].address.oneLine);
+      // console.log(response.property[1].building.rooms);
+      // console.log(response.property[1].summary.propclass);
+    
+      // console.log(response.property[2].address.oneLine);
+      // console.log(response.property[2].building.rooms);
+      // console.log(response.property[2].summary.propclass);
+    
+      // console.log(response.property[3].address.oneLine);
+      // console.log(response.property[3].building.rooms);
+      // console.log(response.property[3].summary.propclass);
+    
+      // console.log(response.property[4].address.oneLine);
+      // console.log(response.property[4].building.rooms);
+      // console.log(response.property[4].summary.propclass);
+      
+    }});
+
+
+
+
+
+// $.ajax(settings2).done(function (response) {
+// 	console.log(response);
+// });
+
+
 // ---------------------------------------------------------
   </script>
 </body>
 </html>
+
