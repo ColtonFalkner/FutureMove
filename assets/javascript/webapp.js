@@ -372,13 +372,13 @@ $(document).ready(function() {
 //     newsFinder.newsGenerator(newsresponse, query);
 // // });
 
-    displayResultsWeather();
+    // displayResultsWeather();
     displayResultsFood();
     // displayResultsNews();
    
 
-});
-=======
+// });
+
     $.ajax(propertySnapshot).done(function(response) {
       
       
@@ -387,12 +387,22 @@ $(document).ready(function() {
         console.log(response.property[i].building.rooms.bathstotal);
         console.log(response.property[i].building.rooms.beds);
         console.log(response.property[i].summary.propclass);
-        console.log(response.property[i].location.longitude);
-        console.log(response.property[i].location.latitude)
+        // console.log(response.property[i].location.longitude);
+        // console.log(response.property[i].location.latitude);
 
       
         var listCard = $("<div>").addClass("card");
-
+        // google static would go here. 
+        // break into strings
+        // https://maps.googleapis.com/maps/api/streetview?size=400x400&location=36.117517,-86.795829&fov=80&heading=70&pitch=0&key=AIzaSyD3AaKsnG30BuneEamtN6UHK7c4ngLaXug
+        var long = response.property[i].location.longitude;
+        console.log(long);
+        var lat = response.property[i].location.latitude;
+        console.log(lat);
+        var listPic= $('<img>').attr( "src", "https://maps.googleapis.com/maps/api/streetview?size=400x200&location=" + lat + "," + long + "&fov=80&heading=70&pitch=0&key=AIzaSyD3AaKsnG30BuneEamtN6UHK7c4ngLaXug");
+        
+        
+        
         var listAddress = $("<h5>").addClass("card-title");
         listAddress.append(response.property[i].address.oneLine);
 
@@ -406,6 +416,7 @@ $(document).ready(function() {
         var listClass = $("<h6>").addClass("card-text");
         listClass.append(response.property[i].summary.propclass);
 
+        listCard.append(listPic);
         listCard.append(listAddress);
         listCard.append(listRooms);
         listCard.append(listClass);
