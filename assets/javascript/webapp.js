@@ -380,18 +380,28 @@ $(document).ready(function() {
 });
 =======
     $.ajax(propertySnapshot).done(function(response) {
-        
+      
+      
       for (var i = 0; i < response.property.length; i++) {
         console.log(response.property[i].address.oneLine);
-        console.log(response.property[i].building.rooms);
+        console.log(response.property[i].building.rooms.bathstotal);
+        console.log(response.property[i].building.rooms.beds);
         console.log(response.property[i].summary.propclass);
+        console.log(response.property[i].location.longitude);
+        console.log(response.property[i].location.latitude)
 
+      
         var listCard = $("<div>").addClass("card");
+
         var listAddress = $("<h5>").addClass("card-title");
         listAddress.append(response.property[i].address.oneLine);
 
-        var listRooms = $("<h6>").addClass("card-text");
-        listRooms.append(response.property[i].building.rooms);
+        var listBath = $("<h6>").addClass("card-title");
+        listBath.append("Bathrooms: " + response.property[i].building.rooms.bathstotal);
+
+        var listRooms = $("<h6>").addClass("card-title");
+        listRooms.append("Bedrooms: " + response.property[i].building.rooms.beds);
+
 
         var listClass = $("<h6>").addClass("card-text");
         listClass.append(response.property[i].summary.propclass);
@@ -399,6 +409,9 @@ $(document).ready(function() {
         listCard.append(listAddress);
         listCard.append(listRooms);
         listCard.append(listClass);
+        listCard.append(listBath);
+        listCard.append(listRooms);
+        
 
         $("#listResults").append(listCard);
 
