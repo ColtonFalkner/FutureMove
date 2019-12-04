@@ -157,10 +157,10 @@ $(document).ready(function() {
     };
     $.ajax(propertySnapshot).done(function(response) {
       for (var i = 0; i < response.property.length; i++) {
-        console.log(response.property[i].address.oneLine);
-        console.log(response.property[i].building.rooms.bathstotal);
-        console.log(response.property[i].building.rooms.beds);
-        console.log(response.property[i].summary.propclass);
+        // console.log(response.property[i].address.oneLine);
+        // console.log(response.property[i].building.rooms.bathstotal);
+        // console.log(response.property[i].building.rooms.beds);
+        // console.log(response.property[i].summary.propclass);
         // console.log(response.property[i].location.longitude);
         // console.log(response.property[i].location.latitude);
 
@@ -227,4 +227,3 @@ $(document).ready(function() {
 });
 
 
-{/* <iframe src="https://www.publicschoolreview.com/widget_iframe.php?condition1=Nashville&condition2=TN&address=Nashville%2CTN&show_type=city&width=336&height=600&bg=FFDD00" width="336" height="600" frameborder=0 scrolling="no"></iframe> */}
