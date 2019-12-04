@@ -207,13 +207,14 @@ $(document).ready(function() {
     });
   }
 
-  
-
+  //////////////////////////////School Listings///////////////////////////////////
+  var schoolList = $("<iframe>").attr("src", "https://www.publicschoolreview.com/widget_iframe.php?condition1=" +city + "&condition2=" + state + "&address=" + city +"%2CTN&show_type=city&width=300&height=600&bg=FFDD00");
+    $("#schoolsResults").append(schoolList)
 
   
 
   displayListings();
   displayResultsWeather();
   displayResultsFood();
-  // displayResultsNews();
+  
 });
