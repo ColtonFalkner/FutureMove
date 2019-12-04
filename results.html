@@ -30,9 +30,21 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+   
 </head>
 
 <body>
+        <div class="jumbotron">
+                <h1 class="text-center">Show Results For:</h1>
+                <ul class="navbar-nav ml-auto">
+          
+                        <li id="nava" class="nav-item">
+                          <a id="nava" class="nav-link" href= index.html>Home Screen</a>
+                        </li>
+              
+                      </ul>
+            </div> 
+            
   <div id="page-header">
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -47,13 +59,7 @@
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
-        <ul class="navbar-nav ml-auto">
-          
-          <li id="nava" class="nav-item">
-            <a id="nava" class="nav-link" href= index.html>Home Screen</a>
-          </li>
-
-        </ul>
+        
 
 
       </div>
@@ -67,7 +73,7 @@
       <div class="container">
         <div class="row">
           <div id="show" class="card" style="width:100%">
-            <h5 class="card-header"><i>Showing results for:</i></h5>
+            <h5 class="card-header"><i>Location</i></h5>
             <div class="card-body">
               <div class="card-group">
                 <div id="userLocation" class="card">
@@ -99,49 +105,9 @@
               </div>
             </div>
          </div>
-        <div id="resultsRest" class="row">
-          <!-- restaurants -->
-          <div class="card" style="width: 100%">
-            <h5 class="card-header"><i>Restaurants:</i></h5>
-            <div class="card-body">
-              <!-- api results -->
-              <div id="restResults">
-                <div class="card-group">
-
-
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-        ​
+        </section>
         <br>
-        ​
-        
-        
-        ​
-        <br>
-        
-        ​
-        <div id="resultsSchools" class="row">
-          <!-- schools -->
-          <div class="card" style="width: 100%">
-            <h5 class="card-header"><i>Schools:</i></h5>
-            <div class="card-body">
-              <!-- api results -->
-              <div id="schoolsResults">
-                <div class="card-group">
-                  <div><iframe src="https://www.publicschoolreview.com/widget_iframe.php?condition1=Nashville&condition2=TN&address=Nashville%2CTN&show_type=city&width=336&height=600&bg=FFDD00" width="336" height="600" frameborder=0 scrolling="no"></iframe></div>
-                </div>
-              </div>
 
-            </div>
-
-          </div>
-        </div>
-      </div>
     </section>
     ​
     <aside style="box-sizing: border-box; width:40%; float:left">
@@ -156,6 +122,51 @@
       </div>
     </aside>
   </div>
+  <br>
+        ​ 
+        <aside style="box-sizing: border-box; width:40%; float:left">
+          <div class="container">
+            <div class="card">
+              <h5 class="card-header"><i>Restaurants:</i></h5>
+              <div class="card-body">
+                <!-- api results -->
+                <div id="restResults">
+                  <div class="card-group">
+                    </div>   
+                ​</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+        ​
+        <br>
+       
+        
+        <aside style="box-sizing: border-box; width:40%; float:left">
+             <div class="container">
+                <div class="card">
+                    <h5 class="card-header"><i>Schools:</i></h5>
+                        <div class="card-body">
+              <!-- api results -->
+                        <div id="schoolsResults">
+                    <div class="card-group">
+                  <div><iframe src="https://www.publicschoolreview.com/widget_iframe.php?condition1=Nashville&condition2=TN&address=Nashville%2CTN&show_type=city&width=336&height=600&bg=FFDD00" width="336" height="600" frameborder=0 scrolling="no"></iframe></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+      
+        ​
+        
+   
   ​
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
