@@ -82,6 +82,7 @@ $(document).ready(function() {
       weatherDiv.append(pTemp);
       weatherDiv.append(pWind);
       weatherDiv.append(pHumidity);
+      $("#weatherResults").addClass("animated fadeIn")
       $("#weatherResults").append(weatherDiv);
     });
   }
@@ -132,6 +133,7 @@ $(document).ready(function() {
         restCard.append(pRestAddress);
         restCard.append(pRestPhone);
         restCard.append(pRestReserve);
+        $("#restResults").addClass("animated fadeIn")
         $("#restResults").append(restCard);
       }
     });
