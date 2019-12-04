@@ -156,7 +156,7 @@ $(document).ready(function() {
       }
     };
     $.ajax(propertySnapshot).done(function(response) {
-      for (var i = 0; i < response.property.length; i++) {
+      for (var i = 0; i < response.property.length && i < 5; i++) {
         // console.log(response.property[i].address.oneLine);
         // console.log(response.property[i].building.rooms.bathstotal);
         // console.log(response.property[i].building.rooms.beds);
