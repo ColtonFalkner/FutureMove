@@ -199,7 +199,7 @@ $(document).ready(function() {
         listCard.append(listClass);
         listCard.append(listBath);
         listCard.append(listRooms);
-
+       $("#listResults").addClass("animated fadeIn")
         $("#listResults").append(listCard);
       }
     });
@@ -373,7 +373,7 @@ $(document).ready(function() {
     // // });
 
     // displayResultsWeather();
-    displayResultsFood();
+    // displayResultsFood();
     // displayResultsNews();
 
     // });
