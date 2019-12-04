@@ -82,7 +82,7 @@ $(document).ready(function() {
       weatherDiv.append(pTemp);
       weatherDiv.append(pWind);
       weatherDiv.append(pHumidity);
-      $("#weatherResults").addClass("animated fadeIn")
+      $("#weatherResults").addClass("animated fadeIn");
       $("#weatherResults").append(weatherDiv);
     });
   }
@@ -133,7 +133,7 @@ $(document).ready(function() {
         restCard.append(pRestAddress);
         restCard.append(pRestPhone);
         restCard.append(pRestReserve);
-        $("#restResults").addClass("animated fadeIn")
+        $("#restResults").addClass("animated fadeIn");
         $("#restResults").append(restCard);
       }
     });
@@ -146,7 +146,9 @@ $(document).ready(function() {
       async: true,
       crossDomain: true,
       url:
-        "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?postalcode=" + zip + "&minUniversalSize=1200&maxUniversalSize=1800",
+        "https://api.gateway.attomdata.com/propertyapi/v1.0.0/property/snapshot?postalcode=" +
+        zip +
+        "&minUniversalSize=1200&maxUniversalSize=1800",
       method: "GET",
       headers: {
         apikey: "0da31fe50c76d41e8f480520b54d9a17",
@@ -163,9 +165,7 @@ $(document).ready(function() {
         // console.log(response.property[i].location.latitude);
 
         var listCard = $("<div>").addClass("card");
-        // google static would go here.
-        // break into strings
-        // https://maps.googleapis.com/maps/api/streetview?size=400x400&location=36.117517,-86.795829&fov=80&heading=70&pitch=0&key=AIzaSyD3AaKsnG30BuneEamtN6UHK7c4ngLaXug
+        
         var long = response.property[i].location.longitude;
         console.log(long);
         var lat = response.property[i].location.latitude;
@@ -201,20 +201,30 @@ $(document).ready(function() {
         listCard.append(listClass);
         listCard.append(listBath);
         listCard.append(listRooms);
-       $("#listResults").addClass("animated fadeIn")
+        $("#listResults").addClass("animated fadeIn");
         $("#listResults").append(listCard);
       }
     });
   }
 
   //////////////////////////////School Listings///////////////////////////////////
-  var schoolList = $("<iframe>").attr("src", "https://www.publicschoolreview.com/widget_iframe.php?condition1=" +city + "&condition2=" + state + "&address=" + city +"%2CTN&show_type=city&width=300&height=600&bg=FFDD00");
-    $("#schoolsResults").append(schoolList)
-
-  
+  var schoolList = $("<iframe>").attr(
+    "src",
+    "https://www.publicschoolreview.com/widget_iframe.php?condition1=" +
+      city +
+      "&condition2=" +
+      state +
+      "&address=" +
+      city +
+      "%2CTN&show_type=city&width=300&height=600&bg=FFDD00"
+  );
+  $(schoolList).css({"width": "336", "height": "600"})
+  $("#schoolsResults").append(schoolList);
 
   displayListings();
   displayResultsWeather();
   displayResultsFood();
-  
 });
+
+
+{/* <iframe src="https://www.publicschoolreview.com/widget_iframe.php?condition1=Nashville&condition2=TN&address=Nashville%2CTN&show_type=city&width=336&height=600&bg=FFDD00" width="336" height="600" frameborder=0 scrolling="no"></iframe> */}
