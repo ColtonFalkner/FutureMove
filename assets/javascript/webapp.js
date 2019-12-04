@@ -218,7 +218,7 @@ $(document).ready(function() {
       city +
       "%2CTN&show_type=city&width=300&height=600&bg=FFDD00"
   );
-  $(schoolList).css({"width": "336", "height": "600"})
+  $(schoolList).css({"width": "336", "height": "600", "content-align": "center"})
   $("#schoolsResults").append(schoolList);
 
   displayListings();
